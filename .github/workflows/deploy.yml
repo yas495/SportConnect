@@ -1,0 +1,51 @@
+# Zet SportConnect automatisch online via GitHub Pages (eis B4).
+# Bij elke push naar main bouwt GitHub de site met Vite en publiceert de map dist/.
+name: Deploy naar GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # handmatig starten kan ook (tabblad Actions)
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # .env staat niet op GitHub. De Supabase-gegevens komen uit de
+      # repository-variabelen (Settings → Secrets and variables → Actions → Variables).
+      - run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
