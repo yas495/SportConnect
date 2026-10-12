@@ -6,6 +6,7 @@
   <title>Nieuwe activiteit – SportConnect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -15,13 +16,56 @@
       <a href="./activiteiten.html">Activiteiten</a>
       <a href="./nieuw.html" class="actief">+ Nieuw</a>
       <a href="./profiel.html">Profiel</a>
-      <span class="avatar" id="nav-avatar">?</span>
+      <span class="avatar" id="nav-avatar"></span>
     </nav>
   </header>
 
   <main class="pagina">
-    <h1>Nieuwe activiteit</h1>
-    <p>Dit scherm wordt gebouwd in stap 4.</p>
+    <!-- Formulier in het midden van het scherm (ontwerp 5.6) -->
+    <form class="kaart formulier-midden" id="form-nieuw" novalidate>
+      <h1>Nieuwe activiteit</h1>
+      <p class="subtitel">Vul de gegevens in en nodig anderen uit</p>
+      <div id="melding" class="melding" hidden></div>
+
+      <!-- Eerst wat en wanneer, daarna waar en met hoeveel mensen -->
+      <div class="veld-raster">
+        <div>
+          <label for="sport">Sport *</label>
+          <select id="sport"><option value="">Kies een sport</option></select>
+        </div>
+        <div>
+          <label for="niveau">Niveau *</label>
+          <select id="niveau"><option value="">Kies een niveau</option></select>
+        </div>
+        <div>
+          <label for="datum">Datum *</label>
+          <input type="date" id="datum">
+        </div>
+        <div>
+          <label for="tijd">Tijd *</label>
+          <input type="time" id="tijd">
+        </div>
+        <div>
+          <label for="locatie">Locatie *</label>
+          <input type="text" id="locatie" placeholder="Bijvoorbeeld Stadswandelpark">
+        </div>
+        <div>
+          <label for="plaats">Plaats *</label>
+          <input type="text" id="plaats" placeholder="Bijvoorbeeld Eindhoven">
+        </div>
+        <div>
+          <label for="plekken">Aantal plekken *</label>
+          <input type="number" id="plekken" min="2" max="50" value="4">
+        </div>
+      </div>
+
+      <label for="omschrijving">Omschrijving</label>
+      <textarea id="omschrijving" rows="3" placeholder="Bijvoorbeeld: ± 8 km in rustig tempo"></textarea>
+
+      <button type="submit" class="knop knop-breed">Activiteit aanmaken</button>
+    </form>
   </main>
+
+  <script type="module" src="./js/pagina-nieuw.js"></script>
 </body>
 </html>
