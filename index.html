@@ -6,14 +6,65 @@
   <title>Inloggen – SportConnect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-  <main class="pagina">
-    <h1>SportConnect</h1>
-    <p>Inloggen en registreren komen in stap 2.</p>
-  </main>
+<body class="auth-body">
+  <div class="auth-scherm">
+    <!-- Links: logo, naam en korte uitleg (ontwerp 5.3) -->
+    <section class="auth-intro">
+      <div>
+        <h1>SportConnect</h1>
+        <p class="auth-slogan">Vind sporters bij jou in de buurt</p>
+        <p class="auth-uitleg">Maak zelf een activiteit aan of doe mee met anderen. Padel, hardlopen, voetbal en meer.</p>
+      </div>
+    </section>
 
-  <script type="module" src="./js/supabase.js"></script>
+    <!-- Rechts: het formulier -->
+    <section class="auth-formulier">
+      <div class="auth-blok">
+        <div id="melding" class="melding" hidden></div>
+
+        <!-- Inloggen -->
+        <form id="form-inloggen" novalidate>
+          <h2>Inloggen</h2>
+          <p class="subtitel">Welkom terug!</p>
+          <label for="login-email">E-mailadres</label>
+          <input type="email" id="login-email" autocomplete="email" placeholder="naam@voorbeeld.nl">
+          <label for="login-wachtwoord">Wachtwoord</label>
+          <input type="password" id="login-wachtwoord" autocomplete="current-password">
+          <p class="rechts"><a href="#" data-naar="vergeten">Wachtwoord vergeten?</a></p>
+          <button type="submit" class="knop knop-breed">Inloggen</button>
+          <p class="wissel">Nog geen account? <a href="#" data-naar="registreren">Registreren</a></p>
+        </form>
+
+        <!-- Registreren -->
+        <form id="form-registreren" novalidate hidden>
+          <h2>Registreren</h2>
+          <p class="subtitel">Maak een account aan en begin met sporten.</p>
+          <label for="reg-naam">Naam</label>
+          <input type="text" id="reg-naam" autocomplete="name" placeholder="Voor- en achternaam">
+          <label for="reg-email">E-mailadres</label>
+          <input type="email" id="reg-email" autocomplete="email" placeholder="naam@voorbeeld.nl">
+          <label for="reg-wachtwoord">Wachtwoord</label>
+          <input type="password" id="reg-wachtwoord" autocomplete="new-password" placeholder="Minimaal 6 tekens">
+          <button type="submit" class="knop knop-breed">Account aanmaken</button>
+          <p class="wissel">Heb je al een account? <a href="#" data-naar="inloggen">Inloggen</a></p>
+        </form>
+
+        <!-- Wachtwoord vergeten -->
+        <form id="form-vergeten" novalidate hidden>
+          <h2>Wachtwoord vergeten</h2>
+          <p class="subtitel">Vul je e-mailadres in. Je krijgt een link om een nieuw wachtwoord te kiezen.</p>
+          <label for="vergeten-email">E-mailadres</label>
+          <input type="email" id="vergeten-email" autocomplete="email" placeholder="naam@voorbeeld.nl">
+          <button type="submit" class="knop knop-breed">Resetlink versturen</button>
+          <p class="wissel"><a href="#" data-naar="inloggen">← Terug naar inloggen</a></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="./js/pagina-inloggen.js"></script>
 </body>
 </html>

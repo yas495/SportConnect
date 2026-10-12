@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nieuw wachtwoord – SportConnect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="auth-body">
+  <div class="auth-scherm">
+    <section class="auth-intro">
+      <div>
+        <h1>SportConnect</h1>
+        <p class="auth-slogan">Vind sporters bij jou in de buurt</p>
+      </div>
+    </section>
+
+    <section class="auth-formulier">
+      <div class="auth-blok">
+        <div id="melding" class="melding" hidden></div>
+
+        <form id="form-reset" novalidate>
+          <h2>Nieuw wachtwoord</h2>
+          <p class="subtitel">Kies een nieuw wachtwoord voor je account.</p>
+          <label for="nieuw-wachtwoord">Nieuw wachtwoord</label>
+          <input type="password" id="nieuw-wachtwoord" autocomplete="new-password" placeholder="Minimaal 6 tekens">
+          <label for="herhaal-wachtwoord">Herhaal wachtwoord</label>
+          <input type="password" id="herhaal-wachtwoord" autocomplete="new-password">
+          <button type="submit" class="knop knop-breed">Wachtwoord opslaan</button>
+          <p class="wissel"><a href="./index.html">← Terug naar inloggen</a></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="./js/pagina-wachtwoord-reset.js"></script>
+</body>
+</html>

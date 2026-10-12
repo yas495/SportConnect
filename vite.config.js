@@ -13,6 +13,8 @@ export default defineConfig({
         activiteit: resolve(import.meta.dirname, 'activiteit.html'),
         nieuw: resolve(import.meta.dirname, 'nieuw.html'),
         profiel: resolve(import.meta.dirname, 'profiel.html'),
+        // Extra pagina (niet in het ontwerp): nieuw wachtwoord kiezen
+        wachtwoordReset: resolve(import.meta.dirname, 'wachtwoord-reset.html'),
       },
     },
   },

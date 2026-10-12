@@ -118,3 +118,488 @@ a {
   background: var(--grijs);
   cursor: not-allowed;
 }
+
+.knop-omlijnd {
+  background: var(--wit);
+  color: var(--oranje);
+  border: 1.5px solid var(--oranje);
+}
+
+.knop-omlijnd:hover {
+  background: #fff7ed;
+}
+
+.knop-breed {
+  display: block;
+  width: 100%;
+  padding: 12px;
+}
+
+.link-knop {
+  background: none;
+  border: none;
+  font: inherit;
+  color: var(--tekst-zacht);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ---------- Teksten ---------- */
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+.pagina-titel {
+  font-size: 1.75rem;
+}
+
+.subtitel {
+  margin: 4px 0 20px;
+  color: var(--tekst-zacht);
+  font-size: 0.9rem;
+}
+
+.tekst-zacht {
+  color: var(--tekst-zacht);
+}
+
+.klein {
+  font-size: 0.8rem;
+  margin: 2px 0 0;
+}
+
+.kopje {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tekst-zacht);
+  margin-bottom: 10px;
+}
+
+/* ---------- Formulieren ---------- */
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--donkerblauw);
+  background: var(--wit);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--groen);
+  outline-offset: -1px;
+  border-color: var(--groen);
+}
+
+input.fout,
+select.fout {
+  border-color: var(--rood);
+  background: #fef2f2;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form .knop {
+  margin-top: 20px;
+}
+
+.veld-raster {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+/* ---------- Meldingen (B2) ---------- */
+.melding {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.melding-fout {
+  background: #fef2f2;
+  color: var(--rood);
+  border: 1px solid #fecaca;
+}
+
+.melding-succes {
+  background: var(--groen-licht);
+  color: #0b7a5f;
+  border: 1px solid #a7e3d2;
+}
+
+/* ---------- Inloggen / registreren (5.3) ---------- */
+.auth-body {
+  background: var(--wit);
+}
+
+.auth-scherm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.auth-intro {
+  background: var(--groen);
+  color: var(--wit);
+  display: flex;
+  align-items: center;
+  padding: 64px;
+}
+
+.auth-intro h1 {
+  font-size: 2.6rem;
+}
+
+.auth-slogan {
+  font-size: 1.15rem;
+  margin: 12px 0 8px;
+}
+
+.auth-uitleg {
+  opacity: 0.85;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.auth-formulier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.auth-blok {
+  width: 100%;
+  max-width: 380px;
+}
+
+.auth-blok h2 {
+  font-size: 1.6rem;
+}
+
+.rechts {
+  text-align: right;
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+}
+
+.wissel {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--tekst-zacht);
+  margin-top: 16px;
+}
+
+.wissel a,
+.rechts a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---------- Activiteitenoverzicht (5.4) ---------- */
+.pagina-kop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter {
+  width: auto;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Een gekozen filter wordt donkerblauw (ontwerp 5.2) */
+.filter:has(option:checked:not([value=""])) {
+  background: var(--donkerblauw);
+  color: var(--wit);
+  border-color: var(--donkerblauw);
+}
+
+.activiteiten-raster {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.activiteit-kaart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.activiteit-kaart:hover {
+  box-shadow: 0 6px 16px rgba(30, 41, 59, 0.1);
+  transform: translateY(-2px);
+}
+
+.kaart-kop {
+  display: flex;
+  gap: 14px;
+}
+
+.kaart-kop h3 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.kaart-info {
+  margin: 2px 0;
+  font-size: 0.82rem;
+  color: var(--tekst-zacht);
+}
+
+.kaart-voet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.kaart-voet .knop {
+  padding: 8px 18px;
+}
+
+.plekken-vrij {
+  color: var(--groen);
+  font-weight: 700;
+}
+
+.plekken-vol {
+  color: var(--tekst-zacht);
+}
+
+/* Sportletter in een gekleurd vakje (C1) */
+.sportletter {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--groen-licht);
+  color: var(--groen);
+  font-weight: 700;
+}
+
+.sportletter-klein {
+  width: 22px;
+  height: 22px;
+  font-size: 0.75rem;
+  border-radius: 5px;
+}
+
+.sportletter-groot {
+  width: 52px;
+  height: 52px;
+  font-size: 1.4rem;
+}
+
+.leeg {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px;
+  color: var(--tekst-zacht);
+}
+
+/* Populairste sporten (C2) */
+.populair {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 20px;
+}
+
+.populair-titel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--tekst-zacht);
+}
+
+/* ---------- Chips (favoriete sporten) ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--groen-licht);
+  color: var(--groen);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.chip-weg {
+  background: none;
+  border: none;
+  color: var(--groen);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chip-toevoegen {
+  background: var(--wit);
+  border: 1px dashed var(--groen);
+  cursor: pointer;
+}
+
+.chip-klik {
+  background: var(--wit);
+  color: var(--donkerblauw);
+  border-color: #dbe2ea;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.chip-klik:hover {
+  border-color: var(--groen);
+}
+
+/* ---------- Activiteit details (5.5) ---------- */
+.terug {
+  display: inline-block;
+  color: var(--tekst-zacht);
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.detail-kop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.detail-raster {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.detail-raster p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+
+.detail-raster .kopje:not(:first-child) {
+  margin-top: 20px;
+}
+
+.detail-zijkant {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.persoon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.deelnemers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.avatar-groen {
+  background: var(--groen);
+}
+
+.avatar-leeg {
+  background: none;
+  border: 1.5px dashed var(--grijs);
+  color: var(--grijs);
+}
+
+/* ---------- Activiteit aanmaken (5.6) ---------- */
+.formulier-midden {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 40px;
+}
+
+/* ---------- Profiel (5.7) ---------- */
+.profiel-raster {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.profiel-samenvatting {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.profiel-samenvatting h2 {
+  font-size: 1.2rem;
+}
+
+.profiel-samenvatting p {
+  margin: 6px 0 10px;
+  font-size: 0.85rem;
+}
+
+.avatar-groot {
+  width: 96px;
+  height: 96px;
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+/* ---------- Kleinere laptopschermen ---------- */
+@media (max-width: 1100px) {
+  .activiteiten-raster {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
