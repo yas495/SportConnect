@@ -26,6 +26,7 @@ Per afgeronde stap: wat is gebouwd, welke bestanden/tabellen, problemen en oplos
 
 **Hoe getest**
 - `npm run build`: alle vijf pagina's worden gebouwd zonder fouten.
-- `npm run dev`: de pagina's openen in de browser, de navigatiebalk werkt en de console is leeg.
+- Supabase is bereikbaar met de publishable key (de auth-healthcheck gaf status 200).
+- Nog te doen door Yassin: `npm run dev`, de pagina's openen in de browser, controleren dat de navigatiebalk werkt en dat de console leeg is.
 
 📸 **Screenshot maken:** de mappenstructuur in VS Code en de geopende pagina in de browser.
