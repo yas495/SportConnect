@@ -199,6 +199,7 @@ Ingelogd op https://yas495.github.io/SportConnect/: het overzicht laadt, uitlogg
 | Triggers voor profiel en maker-als-deelnemer | Betrouwbaarder dan dit vanuit JavaScript doen. |
 | Geen eindtijd op de detailpagina | Het datamodel (6.2) heeft alleen `start_time`. De eindtijd in het UI-ontwerp is daarom weggelaten. |
 | Geen knoppen om activiteiten te bewerken/verwijderen | Er staat geen scherm voor in het ontwerp. RLS staat het wel toe voor de maker (6.3). |
+| **Telefoonweergave** (media query < 768px, alleen in `style.css`) | Op verzoek toegevoegd. Het ontwerp noemt een telefoonversie als mogelijke uitbreiding (hoofdstuk 2). Op een laptop verandert er niets. Getest op iPhone 13-formaat: niets breder dan het scherm, geen consolefouten. |
 | Vite als dev-server/build | Nodig om supabase-js als npm-pakket te gebruiken en de keys via `.env` buiten git te houden. |
 
 ---
@@ -228,6 +229,7 @@ Ingelogd op https://yas495.github.io/SportConnect/: het overzicht laadt, uitlogg
 | 19-profiel.png | Profiel na herladen | A2 |
 | 20-details-andere-organisator.png | Activiteit van een andere gebruiker | US6 |
 | 21-online-github-pages.png | Online versie op GitHub Pages | B4 |
+| 22 t/m 26-mobiel-*.png | Inloggen, overzicht, details, nieuw en profiel op een telefoon | aanvulling |
 
 **Nog zelf te maken:** de Supabase Table Editor, de policies en de Security- en Performance-Advisors.
 
@@ -238,4 +240,4 @@ Ingelogd op https://yas495.github.io/SportConnect/: het overzicht laadt, uitlogg
 - RLS bleek een belangrijk punt. Doordat de database zelf controleert, maakt het niet uit dat de key openbaar in de browser staat.
 - Het meeste oponthoud zat niet in de code, maar in de configuratie: migraties uitvoeren, Supabase-instellingen, GitHub Pages en secrets versus variables.
 - Testen met twee accounts liet zien dat de beveiliging echt werkt, en niet alleen in theorie.
-- Verbeterpunten: een eigen mailserver (SMTP), activiteiten bewerken en verwijderen, een eindtijd in het datamodel, en een mobiele weergave.
+- Verbeterpunten: een eigen mailserver (SMTP), activiteiten bewerken en verwijderen, en een eindtijd in het datamodel. (De mobiele weergave is al toegevoegd.)
