@@ -101,3 +101,9 @@ Een gekozen filter wordt donkerblauw, zoals in de stijl uit 5.2.
 RLS is getest met directe verzoeken aan de database. Een gebruiker kon geen profiel, activiteit of aanmelding van een ander wijzigen of verwijderen. Dubbel aanmelden werd geweigerd. Niet-ingelogde bezoekers krijgen geen toegang. De volledige tabel staat in [realisatie-log.md](realisatie-log.md) onder stap 1.
 
 📸 **Zelf nog maken in het Supabase-dashboard:** de Table Editor, de policies en de Security- en Performance-Advisors.
+
+---
+
+## 8. Online via GitHub Pages (B4)
+Ingelogd op https://yas495.github.io/SportConnect/. Het filter staat op de eigen woonplaats (donkerblauw, zie stijl 5.2). Er stonden geen fouten in de console.
+![Online](screenshots/21-online-github-pages.png)

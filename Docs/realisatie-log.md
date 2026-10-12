@@ -184,3 +184,6 @@ Alle schermen zijn automatisch getest in Microsoft Edge, met een schermbreedte v
 **Nog te doen**
 - Advisors in het Supabase-dashboard bekijken en een screenshot maken.
 - Testen of een volle activiteit "Vol" toont. Daarvoor zijn extra accounts nodig.
+
+**Hoe getest (online)**
+- https://yas495.github.io/SportConnect/ geopend, ingelogd met het testaccount, het overzicht toonde 5 activiteiten (filter Eindhoven), daarna uitgelogd. Er stonden geen fouten in de console ✅ (screenshot 21)
