@@ -6,6 +6,7 @@
   <title>Activiteiten – SportConnect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -15,13 +16,37 @@
       <a href="./activiteiten.html" class="actief">Activiteiten</a>
       <a href="./nieuw.html">+ Nieuw</a>
       <a href="./profiel.html">Profiel</a>
-      <span class="avatar" id="nav-avatar">?</span>
+      <span class="avatar" id="nav-avatar"></span>
     </nav>
   </header>
 
   <main class="pagina">
-    <h1>Activiteiten</h1>
-    <p>Dit scherm wordt gebouwd in stap 5.</p>
+    <div class="pagina-kop">
+      <div>
+        <h1 class="pagina-titel">Activiteiten</h1>
+        <p class="subtitel" id="begroeting">Waar heb je zin in?</p>
+      </div>
+      <!-- Filters op sport en plaats (B1) -->
+      <div class="filters">
+        <select id="filter-sport" class="filter" aria-label="Filter op sport">
+          <option value="">Alle sporten</option>
+        </select>
+        <select id="filter-plaats" class="filter" aria-label="Filter op plaats">
+          <option value="">Alle plaatsen</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Populairste sporten (C2) -->
+    <div class="populair" id="populair" hidden></div>
+
+    <div id="melding" class="melding" hidden></div>
+
+    <section class="activiteiten-raster" id="activiteiten-lijst">
+      <p class="tekst-zacht">Activiteiten laden…</p>
+    </section>
   </main>
+
+  <script type="module" src="./js/pagina-activiteiten.js"></script>
 </body>
 </html>
