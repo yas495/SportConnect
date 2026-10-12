@@ -1,0 +1,9 @@
+node_modules/
+dist/
+
+# Echte Supabase-gegevens nooit committen
+.env
+.env.local
+
+.DS_Store
+Thumbs.db

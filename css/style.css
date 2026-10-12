@@ -1,0 +1,120 @@
+/* ============================================================
+   SportConnect - opmaak voor alle schermen
+   Kleuren en lettertype komen uit hoofdstuk 5.2 van het ontwerp.
+   ============================================================ */
+
+:root {
+  --groen: #0f9d7a;        /* bovenbalk, actieve navigatie, vrije plekken */
+  --groen-licht: #e3f5ef;  /* achtergrond van sportletters en chips */
+  --oranje: #f97316;       /* actieknoppen (Meedoen, Opslaan, Inloggen) */
+  --oranje-donker: #ea580c;
+  --donkerblauw: #1e293b;  /* teksten en geselecteerde filters */
+  --lichtgrijs: #f3f6f8;   /* achtergrond, zodat witte kaarten opvallen */
+  --grijs: #cbd5e1;        /* uitgeschakelde knoppen */
+  --tekst-zacht: #64748b;
+  --wit: #ffffff;
+  --rood: #dc2626;         /* foutmeldingen */
+
+  --radius: 10px;
+  --schaduw: 0 1px 3px rgba(30, 41, 59, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--donkerblauw);
+  background: var(--lichtgrijs);
+}
+
+a {
+  color: var(--groen);
+}
+
+/* ---------- Navigatiebalk (op elk scherm na het inloggen) ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: var(--wit);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--groen);
+  text-decoration: none;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar nav a {
+  color: var(--tekst-zacht);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.navbar nav a.actief {
+  color: var(--groen);
+  font-weight: 600;
+}
+
+/* Ronde avatar met initialen (C1) */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--oranje);
+  color: var(--wit);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ---------- Algemene pagina-inhoud ---------- */
+.pagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 48px;
+}
+
+.kaart {
+  background: var(--wit);
+  border-radius: var(--radius);
+  box-shadow: var(--schaduw);
+  padding: 24px;
+}
+
+/* ---------- Knoppen ---------- */
+.knop {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--oranje);
+  color: var(--wit);
+}
+
+.knop:hover {
+  background: var(--oranje-donker);
+}
+
+.knop:disabled {
+  background: var(--grijs);
+  cursor: not-allowed;
+}
