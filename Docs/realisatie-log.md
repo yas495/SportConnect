@@ -173,13 +173,13 @@ Alle schermen zijn automatisch getest in Microsoft Edge, met een schermbreedte v
 **Wat is gebouwd**
 - Repository: https://github.com/yas495/SportConnect
 - `.github/workflows/deploy.yml`: bij elke push naar `main` bouwt GitHub Actions de site met Vite (`npm run build`) en publiceert de map `dist/` op GitHub Pages.
-- De Supabase-URL en de publishable key staan niet in git (`.env` wordt genegeerd). Ze staan als repository-variabelen in GitHub (Settings → Secrets and variables → Actions → Variables).
+- De Supabase-URL en de publishable key staan niet in git (`.env` wordt genegeerd). Ze staan als repository-secrets in GitHub (Settings → Secrets and variables → Actions → Secrets).
 - In Supabase zijn de Site URL en de Redirect URLs ingesteld op `https://yas495.github.io/SportConnect/`.
 - Online adres: https://yas495.github.io/SportConnect/
 
 **Problemen en oplossingen**
 - De eerste deploy mislukte met "Failed to create deployment (status: 404)". GitHub Pages stond nog niet aan. Oplossing: Settings → Pages → Source op "GitHub Actions" zetten.
-- Daarna stond de site online, maar de inlogknop deed niets en in de adresbalk kwam `/?` te staan. Oorzaak: de site was gebouwd zonder de variabelen, waardoor `maakVerbinding()` een fout gaf en de JavaScript niet draaide. In de online code stond "Supabase-gegevens ontbreken". Oplossing: de variabelen toevoegen en opnieuw bouwen.
+- Daarna stond de site online, maar de inlogknop deed niets en in de adresbalk kwam `/?` te staan. Oorzaak: de site was gebouwd zonder de variabelen, waardoor `maakVerbinding()` een fout gaf en de JavaScript niet draaide. In de online code stond "Supabase-gegevens ontbreken". Daarna bleek dat de gegevens bij Secrets stonden, terwijl de workflow Variables las. Oplossing: de workflow leest nu eerst Secrets en daarna Variables.
 
 **Nog te doen**
 - Advisors in het Supabase-dashboard bekijken en een screenshot maken.

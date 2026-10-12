@@ -30,11 +30,12 @@ jobs:
       - run: npm ci
 
       # .env staat niet op GitHub. De Supabase-gegevens komen uit de
-      # repository-variabelen (Settings → Secrets and variables → Actions → Variables).
+      # repository-instellingen (Settings → Secrets and variables → Actions).
+      # Eerst wordt bij Secrets gekeken, anders bij Variables.
       - run: npm run build
         env:
-          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || vars.VITE_SUPABASE_ANON_KEY }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
