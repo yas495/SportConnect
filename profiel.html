@@ -6,6 +6,7 @@
   <title>Mijn profiel – SportConnect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -15,13 +16,53 @@
       <a href="./activiteiten.html">Activiteiten</a>
       <a href="./nieuw.html">+ Nieuw</a>
       <a href="./profiel.html" class="actief">Profiel</a>
-      <span class="avatar" id="nav-avatar">?</span>
+      <span class="avatar" id="nav-avatar"></span>
     </nav>
   </header>
 
   <main class="pagina">
-    <h1>Mijn profiel</h1>
-    <p>Dit scherm wordt gebouwd in stap 3.</p>
+    <h1 class="pagina-titel">Mijn profiel</h1>
+    <div id="melding" class="melding" hidden></div>
+
+    <div class="profiel-raster">
+      <!-- Links: samenvatting van het profiel -->
+      <aside class="kaart profiel-samenvatting">
+        <div class="avatar avatar-groot" id="profiel-avatar"></div>
+        <h2 id="profiel-naam"></h2>
+        <p class="tekst-zacht" id="profiel-sub"></p>
+        <button type="button" class="link-knop" id="uitloggen">Uitloggen</button>
+      </aside>
+
+      <!-- Rechts: het formulier -->
+      <form class="kaart" id="form-profiel" novalidate>
+        <div class="veld-raster">
+          <div>
+            <label for="naam">Naam</label>
+            <input type="text" id="naam" autocomplete="name">
+          </div>
+          <div>
+            <label for="woonplaats">Woonplaats</label>
+            <input type="text" id="woonplaats" placeholder="Bijvoorbeeld Eindhoven">
+          </div>
+        </div>
+
+        <label>Favoriete sporten</label>
+        <div class="chips" id="sport-chips"></div>
+
+        <div class="veld-raster">
+          <div>
+            <label for="niveau">Niveau</label>
+            <select id="niveau">
+              <option value="">Kies je niveau</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="knop">Opslaan</button>
+      </form>
+    </div>
   </main>
+
+  <script type="module" src="./js/pagina-profiel.js"></script>
 </body>
 </html>
