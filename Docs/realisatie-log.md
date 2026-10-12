@@ -166,7 +166,21 @@ Niet getest: een activiteit die echt vol is. Daarvoor zijn meer accounts nodig d
 ## Testsessie in de browser (12-10-2026)
 Alle schermen zijn automatisch getest in Microsoft Edge, met een schermbreedte van 1440 × 900. In de tweede testronde stonden **geen fouten in de console**. De eerste ronde liep vast voordat de console-check werd uitgevoerd. Alle screenshots staan in [screenshots.md](screenshots.md).
 
+---
+
+## Stap 8 – Online via GitHub Pages (B4) (12-10-2026)
+
+**Wat is gebouwd**
+- Repository: https://github.com/yas495/SportConnect
+- `.github/workflows/deploy.yml`: bij elke push naar `main` bouwt GitHub Actions de site met Vite (`npm run build`) en publiceert de map `dist/` op GitHub Pages.
+- De Supabase-URL en de publishable key staan niet in git (`.env` wordt genegeerd). Ze staan als repository-variabelen in GitHub (Settings → Secrets and variables → Actions → Variables).
+- In Supabase zijn de Site URL en de Redirect URLs ingesteld op `https://yas495.github.io/SportConnect/`.
+- Online adres: https://yas495.github.io/SportConnect/
+
+**Problemen en oplossingen**
+- De eerste deploy mislukte met "Failed to create deployment (status: 404)". GitHub Pages stond nog niet aan. Oplossing: Settings → Pages → Source op "GitHub Actions" zetten.
+- Daarna stond de site online, maar de inlogknop deed niets en in de adresbalk kwam `/?` te staan. Oorzaak: de site was gebouwd zonder de variabelen, waardoor `maakVerbinding()` een fout gaf en de JavaScript niet draaide. In de online code stond "Supabase-gegevens ontbreken". Oplossing: de variabelen toevoegen en opnieuw bouwen.
+
 **Nog te doen**
-- B4: online zetten via GitHub Pages. Daarvoor is een GitHub-repository nodig.
 - Advisors in het Supabase-dashboard bekijken en een screenshot maken.
 - Testen of een volle activiteit "Vol" toont. Daarvoor zijn extra accounts nodig.
