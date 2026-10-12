@@ -603,3 +603,97 @@ form .knop {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ============================================================
+   Telefoon en tablet (aanvulling op het ontwerp)
+   Deze regels gelden alleen als het scherm smaller is dan 768px.
+   Op een laptop verandert er dus niets.
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Navigatie: logo boven, links eronder over de volle breedte */
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 16px;
+    row-gap: 8px;
+  }
+
+  .navbar nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .pagina {
+    padding: 20px 16px;
+  }
+
+  .pagina-titel {
+    font-size: 1.5rem;
+  }
+
+  /* 16px voorkomt dat iPhones inzoomen als je in een veld tikt */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* Inlogscherm: groen vlak boven het formulier in plaats van links */
+  .auth-scherm {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .auth-intro {
+    padding: 32px 20px;
+  }
+
+  .auth-intro h1 {
+    font-size: 2rem;
+  }
+
+  .auth-formulier {
+    padding: 28px 16px 40px;
+  }
+
+  /* Overzicht: titel en filters onder elkaar, kaarten in één kolom */
+  .pagina-kop {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filter {
+    flex: 1;
+  }
+
+  .activiteiten-raster {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Formulieren: velden onder elkaar */
+  .veld-raster {
+    grid-template-columns: 1fr;
+  }
+
+  .formulier-midden {
+    padding: 24px 18px;
+  }
+
+  /* Details en profiel: kolommen onder elkaar */
+  .detail-raster,
+  .profiel-raster {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar-groot {
+    width: 72px;
+    height: 72px;
+    font-size: 1.5rem;
+  }
+}

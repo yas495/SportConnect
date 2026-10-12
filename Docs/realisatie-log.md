@@ -187,3 +187,17 @@ Alle schermen zijn automatisch getest in Microsoft Edge, met een schermbreedte v
 
 **Hoe getest (online)**
 - https://yas495.github.io/SportConnect/ geopend, ingelogd met het testaccount, het overzicht toonde 5 activiteiten (filter Eindhoven), daarna uitgelogd. Er stonden geen fouten in de console ✅ (screenshot 21)
+
+---
+
+## Stap 9 – Telefoonweergave (aanvulling) (12-10-2026)
+
+**Wat is gebouwd**
+- Het ontwerp is gemaakt voor laptops (A6), met een telefoonversie als mogelijke uitbreiding (ontwerp hoofdstuk 2). Op verzoek is die nu toegevoegd.
+- Alleen `css/style.css` is aangepast, met een media query `@media (max-width: 768px)`. Die regels gelden alleen op smalle schermen, dus op een laptop verandert er niets.
+- Op een telefoon: het groene vlak van het inlogscherm staat boven het formulier, de kaarten staan in één kolom, de filters lopen over de volle breedte, details en profiel staan onder elkaar, de formuliervelden staan onder elkaar en in de navigatie staat het logo boven de links.
+- Invoervelden zijn 16px groot, zodat iPhones niet automatisch inzoomen als je in een veld tikt.
+
+**Hoe getest**
+- Inloggen, overzicht, details, nieuwe activiteit en profiel geopend op het formaat van een iPhone 13 (390 × 844). Geen enkele pagina was breder dan het scherm (`scrollWidth` = 390) en er stonden geen fouten in de console ✅
+- Screenshots 22 t/m 26.

@@ -107,3 +107,16 @@ RLS is getest met directe verzoeken aan de database. Een gebruiker kon geen prof
 ## 8. Online via GitHub Pages (B4)
 Ingelogd op https://yas495.github.io/SportConnect/. Het filter staat op de eigen woonplaats (donkerblauw, zie stijl 5.2). Er stonden geen fouten in de console.
 ![Online](screenshots/21-online-github-pages.png)
+
+---
+
+## 9. Telefoonweergave (aanvulling op het ontwerp)
+Getest op het formaat van een iPhone 13 (390 × 844). Geen enkele pagina is breder dan het scherm en er stonden geen fouten in de console.
+
+| Inloggen | Overzicht | Details |
+|---|---|---|
+| ![Mobiel inloggen](screenshots/22-mobiel-inloggen.png) | ![Mobiel overzicht](screenshots/23-mobiel-overzicht.png) | ![Mobiel details](screenshots/24-mobiel-details.png) |
+
+| Nieuwe activiteit | Profiel |
+|---|---|
+| ![Mobiel nieuw](screenshots/25-mobiel-nieuw.png) | ![Mobiel profiel](screenshots/26-mobiel-profiel.png) |
