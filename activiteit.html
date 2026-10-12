@@ -6,6 +6,7 @@
   <title>Activiteit – SportConnect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -15,13 +16,18 @@
       <a href="./activiteiten.html" class="actief">Activiteiten</a>
       <a href="./nieuw.html">+ Nieuw</a>
       <a href="./profiel.html">Profiel</a>
-      <span class="avatar" id="nav-avatar">?</span>
+      <span class="avatar" id="nav-avatar"></span>
     </nav>
   </header>
 
   <main class="pagina">
-    <h1>Activiteit</h1>
-    <p>Dit scherm wordt gebouwd in stap 7.</p>
+    <a href="./activiteiten.html" class="terug">← Terug naar overzicht</a>
+    <div id="melding" class="melding" hidden></div>
+    <div id="detail">
+      <p class="tekst-zacht">Activiteit laden…</p>
+    </div>
   </main>
+
+  <script type="module" src="./js/pagina-activiteit.js"></script>
 </body>
 </html>
